@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="player">
+        <h1>Music Player</h1>
+        <input type="text" id="search" placeholder="Search...">
+        <div id="playlists">
+            <!-- Playlists will be listed here -->
+        </div>
+        <div id="playlist">
+            <!-- Songs will be listed here -->
+        </div>
+        <div id="song-info">
+            <h2 id="song-title">Title</h2>
+            <p id="song-author">Author</p>
+        </div>
+        <audio id="audio" controls></audio>
+        <div class="controls">
+            <button id="prev">Previous</button>
+            <button id="backward">-10s</button>
+            <button id="forward">+10s</button>
+            <button id="next">Next</button>
+        </div>
+        <div class="repeat-container">
+            <label class="switch">
+                <input type="checkbox" id="repeat">
+                <span class="slider round"></span>
+            </label>
+            <label for="repeat">Repeat</label>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
