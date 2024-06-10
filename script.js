@@ -255,8 +255,8 @@ const playlists = {
         { title: "", author: "", src: ".mp3" },
     ],
     "Swifty": [
-        { title: "", author: "", src: ".mp3" },
-        { title: "", author: "", src: ".mp3" },
+        { title: "", author: "", src: "Fortnight (feat. Post Malone).mp3" },
+        { title: "", author: "", src: "The Tortured Poets Department.mp3" },
         { title: "", author: "", src: ".mp3" },
         { title: "", author: "", src: ".mp3" },
         { title: "", author: "", src: ".mp3" },
