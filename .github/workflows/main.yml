@@ -1,0 +1,31 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '21'
+
+      - name: Install dependencies (silent)
+        run: npm ci > /dev/null 2>&1
+
+      - name: Run build (silent)
+        run: npm run build --if-present > /dev/null 2>&1
+
+      - name: Run tests (silent)
+        run: npm test > /dev/null 2>&1
+
+      - name: Clean up (silent)
+        run: |
+          rm -rf node_modules > /dev/null 2>&1
+          rm -rf build > /dev/null 2>&1
+          rm -rf /path/to/temp/files > /dev/null 2>&1
