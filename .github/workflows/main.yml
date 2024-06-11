@@ -15,8 +15,8 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install dependencies (silent)
-        run: npm ci > /dev/null 2>&1
+      - name: Install dependencies (debug)
+        run: npm ci
 
       - name: Run build (silent)
         run: npm run build --if-present > /dev/null 2>&1
