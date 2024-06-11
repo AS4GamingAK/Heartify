@@ -13,16 +13,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '21'
+          node-version: '20'
 
       - name: Install dependencies (silent)
-        run: npm ci --quiet --no-progress > /dev/null 2>&1
+        run: npm ci > /dev/null 2>&1
 
       - name: Run build (silent)
-        run: npm run build --if-present --quiet > /dev/null 2>&1
+        run: npm run build --if-present > /dev/null 2>&1
 
       - name: Run tests (silent)
-        run: npm test --quiet > /dev/null 2>&1
+        run: npm test > /dev/null 2>&1
 
       - name: Clean up (silent)
         run: |
