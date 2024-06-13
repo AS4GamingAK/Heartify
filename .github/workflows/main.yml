@@ -10,13 +10,27 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Suppress build step
+      - name: Free up space
         run: |
-          echo "No build step to run" > /dev/null 2>&1
+          echo "Cleaning up unnecessary files to free up space..." > /dev/null 2>&1
+          sudo rm -rf /usr/share/dotnet > /dev/null 2>&1
+          sudo rm -rf /usr/local/lib/android > /dev/null 2>&1
+          sudo rm -rf /opt/ghc > /dev/null 2>&1
+          echo "Cleanup complete." > /dev/null 2>&1
 
-      - name: Suppress test step
+      - name: Run build (silent)
         run: |
-          echo "No test step to run" > /dev/null 2>&1
+          echo "Building project..." > /dev/null 2>&1
+          # Replace the next line with your actual build command
+          ./build.sh > /dev/null 2>&1
+          echo "Build complete." > /dev/null 2>&1
+
+      - name: Run tests (silent)
+        run: |
+          echo "Running tests..." > /dev/null 2>&1
+          # Replace the next line with your actual test command
+          ./test.sh > /dev/null 2>&1
+          echo "Tests complete." > /dev/null 2>&1
 
       - name: Clean up (silent)
         run: |
